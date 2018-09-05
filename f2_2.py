@@ -69,7 +69,8 @@ class F2_2(nn.Module):
         print(xmm)
         print(type(xmm))
         print(self.phy[xmm[0]][:,ymm[0]])
-        phyxy = self.phy[xmm][:,ymm] + (self.km - self.kh) * T[xmm][:ymm]
+        print(T[xmm][:,ymm])
+        phyxy = self.phy[xmm][:,ymm] + (self.km - self.kh) * T[xmm][:,ymm]
         p0 = self.ampaxy0 * torch.exp(1j * phyxy)
 
         self.p01[self.xn:self.xn * 2, self.yn:self.yn * 2] = p0
