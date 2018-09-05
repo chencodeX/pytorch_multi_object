@@ -78,7 +78,7 @@ class F2_2(nn.Module):
         print(p0.shape)
         self.p01[self.xn:self.xn * 2+1, self.yn:self.yn * 2+1] = p0
         print(self.p01.dtype)
-        pk01 = torch.fft(torch.from_numpy(self.p01), 2)
+        pk01 = torch.fft(torch.from_numpy(self.p01))
         pk01 = np.fft.ifftshift(pk01)
         pkzl1 = pk01 * self.temp1
         pkzl1 = np.fft.fftshift(pkzl1)
