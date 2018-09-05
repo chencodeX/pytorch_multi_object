@@ -66,7 +66,7 @@ class F2_2(nn.Module):
         T = 5e-4 * m0
         xmm = np.round(self.xm / self.dlam + 64.5).astype(np.int).T-1
         ymm = np.round(self.ym / self.dlam + 64.5).astype(np.int).T-1
-        print self.phy.shape
+        print (self.phy.shape)
         print(self.phy[xmm][:,ymm].shape)
         print((self.km - self.kh).shape)
         print(T[xmm][:,ymm].size())
