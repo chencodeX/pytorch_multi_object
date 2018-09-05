@@ -19,4 +19,5 @@ from f2_2 import F2_2
 
 m0 = torch.zeros([128, 128], dtype=torch.int32)
 model = F2_2()
+model.init_parms()
 model.forward(m0)
