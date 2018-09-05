@@ -66,6 +66,7 @@ class F2_2(nn.Module):
         T = 5e-4 * m0
         xmm = np.round(self.xm / self.dlam + 64.5)
         ymm = np.round(self.ym / self.dlam + 64.5)
+        print(self.phy[xmm][:,ymm])
         phyxy = self.phy[xmm][:,ymm] + (self.km - self.kh) * T[xmm][:ymm]
         p0 = self.ampaxy0 * torch.exp(1j * phyxy)
 
