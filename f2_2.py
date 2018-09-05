@@ -74,7 +74,7 @@ class F2_2(nn.Module):
         # print(T[xmm][:,ymm])
         phyxy = self.phy[xmm][:,ymm] + (self.km - self.kh) * T[xmm][:,ymm]
         # print (1j * phyxy)
-        p0 = self.ampaxy0 * cmath.exp(1j * phyxy.data.numpy())
+        p0 = self.ampaxy0 * np.exp(1j * phyxy.data.numpy())
 
         self.p01[self.xn:self.xn * 2, self.yn:self.yn * 2] = p0
         pk01 = torch.fft(self.p01, 2)
