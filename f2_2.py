@@ -60,7 +60,7 @@ class F2_2(nn.Module):
         self.locx = locx['locx'].T
         self.locy = np.transpose(locy['locy'])
         self.ampaxy0 = np.transpose(ampaxy0['ampaxy0'])
-        self.temp1 = np.transpose(temp1['temp1'])
+        self.temp1 = np.transpose(temp1['tmp'])
 
     def forward(self, m0):
         T = 5e-4 * m0
