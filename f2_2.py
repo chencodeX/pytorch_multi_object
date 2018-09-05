@@ -78,11 +78,11 @@ class F2_2(nn.Module):
         print(p0.shape)
         self.p01[self.xn:self.xn * 2+1, self.yn:self.yn * 2+1] = p0
         print(self.p01.dtype)
-        pk01 = torch.fft(torch.from_numpy(self.p01))
+        pk01 = torch.fft(torch.from_numpy(self.p01),1)
         pk01 = np.fft.ifftshift(pk01)
         pkzl1 = pk01 * self.temp1
         pkzl1 = np.fft.fftshift(pkzl1)
-        pzl1 = torch.ifft(pkzl1,2)
+        pzl1 = torch.ifft(pkzl1,1)
 
         pzl1 = F.avg_pool2d(pzl1,kernel_size=3,stride=1)
 
