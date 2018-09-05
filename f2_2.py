@@ -56,7 +56,7 @@ class F2_2(nn.Module):
         self.xm1 = np.transpose(xm1['xm1'])
         self.ym1 = np.transpose(ym1['ym1'])
         self.phy = np.transpose(phy['phy'])
-        self.p01 = np.transpose(p01['p01'])
+        self.p01 = np.transpose(p01['p01']).astype(np.float)
         self.locx = locx['locx'].T
         self.locy = np.transpose(locy['locy'])
         self.ampaxy0 = np.transpose(ampaxy0['ampaxy0'])
