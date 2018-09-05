@@ -68,7 +68,7 @@ class F2_2(nn.Module):
         ymm = np.round(self.ym / self.dlam + 64.5).astype(np.int).T-1
         print(xmm.shape,ymm.shape)
         print (self.phy.shape)
-        print(self.phy[xmm][:,ymm].shape)
+        print(self.phy[xmm.tolist()][:,ymm.tolist()].shape)
         print((self.km - self.kh).shape)
         print(T[xmm][:,ymm].size())
         print(T[xmm][:,ymm])
