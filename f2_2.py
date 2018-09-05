@@ -64,8 +64,8 @@ class F2_2(nn.Module):
 
     def forward(self, m0):
         T = 5e-4 * m0
-        xmm = round(self.xm / self.dlam + 64.5)
-        ymm = round(self.ym / self.dlam + 64.5)
+        xmm = np.round(self.xm / self.dlam + 64.5)
+        ymm = np.round(self.ym / self.dlam + 64.5)
         phyxy = self.phy[xmm][:,ymm] + (self.km - self.kh) * T[xmm][:ymm]
         p0 = self.ampaxy0 * torch.exp(1j * phyxy)
 
