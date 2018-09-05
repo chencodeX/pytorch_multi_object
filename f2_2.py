@@ -69,7 +69,7 @@ class F2_2(nn.Module):
         print(xmm.shape,ymm.shape)
         print (self.phy.shape)
         print(self.phy[xmm][:,ymm].shape)
-        print((self.km - self.kh).shape)
+        print(self.km - self.kh)
         print(T[xmm][:,ymm].size())
         print(T[xmm][:,ymm])
         phyxy = self.phy[xmm][:,ymm] + (self.km - self.kh) * T[xmm][:,ymm]
